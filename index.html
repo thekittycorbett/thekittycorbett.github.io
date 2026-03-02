@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty Corbett | Set Costume & Wardrobe | Berlin</title>
+    <meta name="description" content="Kitty Corbett - Set Costume (Wardrobe Supervisor) based in Berlin. Credits include Tatort, 4 Blocks Zero, Sonne und Beton, and more." />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --win95-bg: #b61c79;
+            --win95-gray: #c0c0c0;
+            --win95-dark-gray: #808080;
+            --win95-light: #dfdfdf;
+            --win95-white: #ffffff;
+            --win95-black: #000000;
+            --win95-blue: #000080;
+            --win95-title-blue: linear-gradient(90deg, #000080, #1084d0);
+            --win95-highlight: #ffffff;
+            --win95-shadow: #808080;
+            --win95-dark-shadow: #404040;
+        }
+
+        /* Sparkle animation */
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #fff 0%, #fff 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1.5s ease-in-out infinite;
+            z-index: 9999;
+        }
+
+        .sparkle::before,
+        .sparkle::after {
+            content: '';
+            position: absolute;
+            background: #fff;
+        }
+
+        .sparkle::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .sparkle::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, 'MS Sans Serif', Geneva, sans-serif;
+            background-color: var(--win95-bg);
+            color: var(--win95-black);
+            line-height: 1.4;
+            font-size: 12px;
+            min-height: 100vh;
+            padding: 20px;
+            padding-bottom: 60px;
+        }
+
+        /* Windows 95 3D Border Effects */
+        .win95-outset {
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            box-shadow: inset 1px 1px 0 var(--win95-light), inset -1px -1px 0 var(--win95-shadow);
+        }
+
+        .win95-inset {
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+            box-shadow: inset 1px 1px 0 var(--win95-shadow), inset -1px -1px 0 var(--win95-light);
+        }
+
+        /* Window Container */
+        .window {
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            box-shadow: inset 1px 1px 0 var(--win95-light), inset -1px -1px 0 var(--win95-shadow);
+            margin-bottom: 20px;
+        }
+
+        .window-title {
+            background: var(--win95-title-blue);
+            color: var(--win95-white);
+            padding: 3px 4px;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .window-title-text {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .window-title-text::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #dfdfdf 25%, #808080 25%, #808080 50%, #dfdfdf 50%, #dfdfdf 75%, #808080 75%);
+            background-size: 4px 4px;
+            margin-right: 4px;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 2px;
+        }
+
+        .window-btn {
+            width: 16px;
+            height: 14px;
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .window-btn:active {
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+        }
+
+        .window-content {
+            padding: 8px;
+        }
+
+        /* Navigation - Taskbar Style */
+        nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: var(--win95-gray);
+            border-top: 2px solid var(--win95-highlight);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 2px 4px;
+            gap: 4px;
+        }
+
+        .start-button {
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            padding: 2px 8px;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            height: 28px;
+        }
+
+        .start-button:active {
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+        }
+
+        .start-button::before {
+            content: '🪟';
+            font-size: 16px;
+        }
+
+        .taskbar-divider {
+            width: 2px;
+            height: 24px;
+            background: var(--win95-shadow);
+            border-right: 1px solid var(--win95-highlight);
+            margin: 0 4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--win95-black);
+            font-size: 11px;
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            padding: 4px 12px;
+            display: block;
+            height: 28px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a:hover {
+            background: var(--win95-light);
+        }
+
+        nav a:active {
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+        }
+
+        .taskbar-clock {
+            margin-left: auto;
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+            padding: 2px 8px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .taskbar-clock::before {
+            content: '🔊';
+            font-size: 12px;
+        }
+
+        /* Hero Section - Main Window */
+        .hero {
+            min-height: auto;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            max-width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--win95-black);
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 12px;
+            color: var(--win95-black);
+            line-height: 1.5;
+        }
+
+        .hero-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--win95-shadow);
+        }
+
+        .hero-detail {
+            background: var(--win95-white);
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+            padding: 6px 10px;
+        }
+
+        .hero-detail span:first-child {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--win95-dark-gray);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .hero-detail span:last-child {
+            font-size: 12px;
+            color: var(--win95-black);
+        }
+
+        /* Portfolio Section - File Explorer Style */
+        .portfolio {
+            padding: 0;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--win95-black);
+            margin-bottom: 8px;
+            padding: 4px;
+            background: var(--win95-gray);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 8px;
+            background: var(--win95-white);
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+        }
+
+        .portfolio-item {
+            cursor: pointer;
+            padding: 8px;
+            text-align: center;
+            background: var(--win95-white);
+        }
+
+        .portfolio-item:hover {
+            background: var(--win95-blue);
+        }
+
+        .portfolio-item:hover .portfolio-content h3,
+        .portfolio-item:hover .portfolio-content .role,
+        .portfolio-item:hover .portfolio-content .description,
+        .portfolio-item:hover .portfolio-content .credits {
+            color: var(--win95-white);
+        }
+
+        .portfolio-image {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 8px;
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            position: relative;
+        }
+
+        .portfolio-image::before {
+            content: '🎬';
+            font-size: 32px;
+        }
+
+        .portfolio-image .overlay-title,
+        .portfolio-image .overlay-meta,
+        .portfolio-image .overlay-year {
+            display: none;
+        }
+
+        .portfolio-content h3 {
+            font-size: 11px;
+            font-weight: normal;
+            margin-bottom: 4px;
+            color: var(--win95-black);
+            word-wrap: break-word;
+        }
+
+        .portfolio-content .role {
+            font-size: 10px;
+            color: var(--win95-dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .portfolio-content .description {
+            display: none;
+        }
+
+        .portfolio-content .credits {
+            font-size: 9px;
+            color: var(--win95-dark-gray);
+        }
+
+        /* Filmography Table Section - Spreadsheet Style */
+        .filmography {
+            padding: 0;
+        }
+
+        .filmography h2 {
+            display: none;
+        }
+
+        .filmography-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--win95-white);
+            font-size: 11px;
+        }
+
+        .filmography-table th,
+        .filmography-table td {
+            padding: 4px 8px;
+            text-align: left;
+            border: 1px solid var(--win95-gray);
+        }
+
+        .filmography-table th {
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: none;
+            color: var(--win95-black);
+        }
+
+        .filmography-table td {
+            font-size: 11px;
+            color: var(--win95-black);
+            background: var(--win95-white);
+        }
+
+        .filmography-table tr:hover td {
+            background: var(--win95-blue);
+            color: var(--win95-white);
+        }
+
+        .filmography-table .year {
+            width: 60px;
+            color: var(--win95-black);
+        }
+
+        .filmography-table .type {
+            color: var(--win95-black);
+            font-size: 11px;
+        }
+
+        .filmography-table .role-cell {
+            color: var(--win95-black);
+            font-size: 11px;
+        }
+
+        /* Contact Section - Dialog Box Style */
+        .contact {
+            padding: 0;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .contact-text h2 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--win95-black);
+        }
+
+        .contact-text p {
+            font-size: 12px;
+            color: var(--win95-black);
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            background: var(--win95-white);
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+            padding: 8px;
+        }
+
+        .contact-item span {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--win95-dark-gray);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            font-size: 12px;
+            color: var(--win95-blue);
+            text-decoration: underline;
+        }
+
+        .contact-item a:hover {
+            color: var(--win95-black);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            font-size: 11px;
+            color: var(--win95-blue);
+            text-decoration: underline;
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-highlight) var(--win95-dark-shadow) var(--win95-dark-shadow) var(--win95-highlight);
+            padding: 4px 12px;
+        }
+
+        .social-links a:hover {
+            background: var(--win95-light);
+        }
+
+        .social-links a:active {
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+        }
+
+        /* Footer - Status Bar Style */
+        footer {
+            background: var(--win95-gray);
+            border: 2px solid;
+            border-color: var(--win95-dark-shadow) var(--win95-highlight) var(--win95-highlight) var(--win95-dark-shadow);
+            padding: 4px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            color: var(--win95-black);
+            font-size: 11px;
+        }
+
+        footer a {
+            color: var(--win95-blue);
+            text-decoration: underline;
+            font-size: 11px;
+        }
+
+        footer a:hover {
+            color: var(--win95-black);
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            background: var(--win95-gray);
+            border-bottom: 1px solid var(--win95-shadow);
+            padding: 2px 4px;
+            display: flex;
+            gap: 0;
+        }
+
+        .menu-item {
+            padding: 2px 8px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: var(--win95-blue);
+            color: var(--win95-white);
+        }
+
+        .menu-item span {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .filmography-table .type,
+            .filmography-table th:nth-child(3),
+            .filmography-table td:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 8px;
+                padding-bottom: 55px;
+            }
+
+            .window {
+                margin-bottom: 12px;
+            }
+
+            .window-title {
+                font-size: 11px;
+                padding: 2px 4px;
+            }
+
+            .window-title-text {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 200px;
+            }
+
+            .menu-bar {
+                flex-wrap: wrap;
+                padding: 2px;
+            }
+
+            .menu-item {
+                padding: 2px 6px;
+                font-size: 10px;
+            }
+
+            .window-content {
+                padding: 6px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+                padding: 6px;
+            }
+
+            .portfolio-image {
+                width: 48px;
+                height: 48px;
+            }
+
+            .portfolio-image::before {
+                font-size: 24px;
+            }
+
+            .portfolio-content h3 {
+                font-size: 10px;
+            }
+
+            .portfolio-content .role,
+            .portfolio-content .credits {
+                font-size: 8px;
+            }
+
+            .hero-details {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero-detail {
+                padding: 4px 8px;
+            }
+
+            .hero h1 {
+                font-size: 14px;
+            }
+
+            .hero p {
+                font-size: 11px;
+            }
+
+            .filmography-table th,
+            .filmography-table td {
+                padding: 6px 4px;
+                font-size: 10px;
+            }
+
+            .filmography-table .year {
+                width: 45px;
+            }
+
+            .filmography-table .role-cell {
+                font-size: 9px;
+            }
+
+            .contact-text h2 {
+                font-size: 12px;
+            }
+
+            .contact-text p {
+                font-size: 11px;
+            }
+
+            .contact-item {
+                padding: 6px;
+            }
+
+            .contact-item span {
+                font-size: 9px;
+            }
+
+            .contact-item p,
+            .contact-item a {
+                font-size: 11px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .social-links a {
+                font-size: 10px;
+                padding: 4px 10px;
+                text-align: center;
+            }
+
+            /* Taskbar mobile */
+            nav {
+                height: auto;
+                min-height: 36px;
+                flex-wrap: wrap;
+                padding: 3px;
+                gap: 3px;
+            }
+
+            .start-button {
+                font-size: 10px;
+                padding: 2px 6px;
+                height: 24px;
+            }
+
+            .start-button::before {
+                font-size: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 2px;
+            }
+
+            nav a {
+                font-size: 9px;
+                padding: 3px 6px;
+                height: 24px;
+            }
+
+            .taskbar-clock {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+
+            footer {
+                padding: 4px 6px;
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 4px;
+                padding-bottom: 60px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .taskbar-divider {
+                display: none;
+            }
+
+            .taskbar-clock {
+                display: none;
+            }
+
+            .window-title-text::before {
+                display: none;
+            }
+
+            .menu-bar {
+                display: none;
+            }
+
+            .window-btn {
+                width: 14px;
+                height: 12px;
+                font-size: 8px;
+            }
+
+            /* Keep Role visible, Type is already hidden from 1024px */
+
+            .hero-detail span:first-child {
+                font-size: 8px;
+            }
+
+            .hero-detail span:last-child {
+                font-size: 10px;
+            }
+
+            .section-title {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            nav ul {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .start-button {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 2px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Taskbar Navigation -->
+    <nav>
+        <a href="#home" class="start-button">Start</a>
+        <div class="taskbar-divider"></div>
+        <ul>
+            <li><a href="#filmography">📋 Filmography</a></li>
+            <li><a href="#contact">📧 Contact</a></li>
+        </ul>
+        <div class="taskbar-clock">12:00 PM</div>
+    </nav>
+
+    <!-- Main Window -->
+    <div class="window" id="home">
+        <div class="window-title">
+            <span class="window-title-text">Kitty Corbett - Profile</span>
+            <div class="window-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">□</button>
+                <button class="window-btn">×</button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span class="menu-item"><span>F</span>ile</span>
+            <span class="menu-item"><span>E</span>dit</span>
+            <span class="menu-item"><span>V</span>iew</span>
+            <span class="menu-item"><span>H</span>elp</span>
+        </div>
+        <section class="hero">
+            <div class="window-content">
+                <div class="hero-content">
+                    <h1>📽️ Set Costume & Wardrobe for Film & Television</h1>
+                    <p>Berlin-based costume professional with experience across feature films, TV series, and international productions. Native English speaker with fluent German.</p>
+                    
+                    <div class="hero-details">
+                        <div class="hero-detail">
+                            <span>📍 Location</span>
+                            <span>Berlin, Germany</span>
+                        </div>
+                        <div class="hero-detail">
+                            <span>🌍 Nationality</span>
+                            <span>British & Irish</span>
+                        </div>
+                        <div class="hero-detail">
+                            <span>💬 Languages</span>
+                            <span>English (Native), German (Fluent)</span>
+                        </div>
+                        <div class="hero-detail">
+                            <span>✈️ International Experience</span>
+                            <span>Austria</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Filmography Window -->
+    <div class="window" id="filmography">
+        <div class="window-title">
+            <span class="window-title-text">Filmography.xls - Microsoft Excel</span>
+            <div class="window-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">□</button>
+                <button class="window-btn">×</button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span class="menu-item"><span>F</span>ile</span>
+            <span class="menu-item"><span>E</span>dit</span>
+            <span class="menu-item"><span>V</span>iew</span>
+            <span class="menu-item"><span>I</span>nsert</span>
+            <span class="menu-item">F<span>o</span>rmat</span>
+            <span class="menu-item"><span>T</span>ools</span>
+            <span class="menu-item"><span>H</span>elp</span>
+        </div>
+        <section class="filmography">
+        <h2>Complete Filmography</h2>
+        <table class="filmography-table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="year">2026</td>
+                    <td>Tatort - Im Nebel</td>
+                    <td class="type">TV Film, ARD</td>
+                    <td class="role-cell">Costume Design Assistant</td>
+                </tr>
+                <tr>
+                    <td class="year">2025</td>
+                    <td>4 Blocks Zero</td>
+                    <td class="type">TV Series, HBO Max</td>
+                    <td class="role-cell">Assistant Costume Coordinator (Extras)</td>
+                </tr>
+                <tr>
+                    <td class="year">2024</td>
+                    <td>Unfamiliar</td>
+                    <td class="type">TV Series, Netflix</td>
+                    <td class="role-cell">Set Costume (Additional)</td>
+                </tr>
+                <tr>
+                    <td class="year">2024</td>
+                    <td>Wunderschöner</td>
+                    <td class="type">Feature Film</td>
+                    <td class="role-cell">2nd Assistant Costume Designer</td>
+                </tr>
+                <tr>
+                    <td class="year">2024</td>
+                    <td>Helion - Drive for fame</td>
+                    <td class="type">Commercial</td>
+                    <td class="role-cell">Styling Assistant</td>
+                </tr>
+                <tr>
+                    <td class="year">2024</td>
+                    <td>(Title to be announced)</td>
+                    <td class="type">TV Film, Netflix</td>
+                    <td class="role-cell">Truck Manager / Set Costume</td>
+                </tr>
+                <tr>
+                    <td class="year">2023</td>
+                    <td>The Next Level</td>
+                    <td class="type">Miniseries, ARD</td>
+                    <td class="role-cell">Extras Coordination Costume</td>
+                </tr>
+                <tr>
+                    <td class="year">2023</td>
+                    <td>Die Unschärferelation der Liebe</td>
+                    <td class="type">Feature Film</td>
+                    <td class="role-cell">Set Costume (Additional)</td>
+                </tr>
+                <tr>
+                    <td class="year">2023</td>
+                    <td>Viktor bringt's</td>
+                    <td class="type">TV Series, Prime Video</td>
+                    <td class="role-cell">Set Costume Assistant</td>
+                </tr>
+                <tr>
+                    <td class="year">2022</td>
+                    <td>Ein Fest fürs Leben</td>
+                    <td class="type">Feature Film</td>
+                    <td class="role-cell">Costume Coordinator (Extras Berlin)</td>
+                </tr>
+                <tr>
+                    <td class="year">2022</td>
+                    <td>Loving Her</td>
+                    <td class="type">TV Series, ZDFneo</td>
+                    <td class="role-cell">Costume Design Assistant</td>
+                </tr>
+                <tr>
+                    <td class="year">2022</td>
+                    <td>Para - Wir sind King</td>
+                    <td class="type">TV Series, TNT Serie / Warner TV</td>
+                    <td class="role-cell">Costume Design Intern</td>
+                </tr>
+                <tr>
+                    <td class="year">2021</td>
+                    <td>Sonne und Beton</td>
+                    <td class="type">Feature Film</td>
+                    <td class="role-cell">Set Costume (Additional)</td>
+                </tr>
+                <tr>
+                    <td class="year">2018</td>
+                    <td>The Wall</td>
+                    <td class="type">Short Film</td>
+                    <td class="role-cell">Costume Designer</td>
+                </tr>
+                <tr>
+                    <td class="year">2018</td>
+                    <td>Der Junge im Karohemd</td>
+                    <td class="type">Short Film</td>
+                    <td class="role-cell">Costume Designer</td>
+                </tr>
+                <tr>
+                    <td class="year">2017</td>
+                    <td>Softness of Bodies</td>
+                    <td class="type">Feature Film</td>
+                    <td class="role-cell">Costume Design Assistant</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+    </div>
+
+    <!-- Contact Window -->
+    <div class="window" id="contact">
+        <div class="window-title">
+            <span class="window-title-text">Contact Information</span>
+            <div class="window-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">□</button>
+                <button class="window-btn">×</button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span class="menu-item"><span>F</span>ile</span>
+            <span class="menu-item"><span>E</span>dit</span>
+            <span class="menu-item"><span>V</span>iew</span>
+            <span class="menu-item"><span>H</span>elp</span>
+        </div>
+        <section class="contact">
+        <div class="contact-wrapper">
+            <div class="contact-text">
+                <h2>Get in touch</h2>
+                <p>Available for film and television productions in Berlin and internationally. Open to set costume, wardrobe coordination, and costume assistant positions.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>Based in</span>
+                    <p>Berlin, Germany</p>
+                </div>
+                <div class="contact-item">
+                    <span>Additional Locations</span>
+                    <p>Atlanta, Belfast, Bristol</p>
+                </div>
+                <div class="contact-item">
+                    <span>Profiles</span>
+                    <div class="social-links">
+                        <a href="https://www.imdb.com/name/nm10394987/" target="_blank">IMDb</a>
+                        <a href="https://www.crew-united.com/de/Kitty-Corbett_510590.html" target="_blank">Crew United</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>💾 &copy; 2026 Kitty Corbett | Ready</p>
+        <a href="#home">⬆️ Back to top</a>
+    </footer>
+
+    <script>
+        // Update clock in taskbar
+        function updateClock() {
+            const clock = document.querySelector('.taskbar-clock');
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours % 12 || 12;
+            clock.innerHTML = `🔊 ${displayHours}:${minutes} ${ampm}`;
+        }
+        updateClock();
+        setInterval(updateClock, 60000);
+
+        // Sparkle effect
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.animationDelay = Math.random() * 1.5 + 's';
+            sparkle.style.animationDuration = (1 + Math.random() * 1) + 's';
+            const size = 5 + Math.random() * 10;
+            sparkle.style.width = size + 'px';
+            sparkle.style.height = size + 'px';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Create initial sparkles
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => createSparkle(), i * 100);
+        }
+
+        // Continuously create new sparkles
+        setInterval(createSparkle, 200);
+    </script>
+</body>
+</html>
